@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ABS Academy</title>
+    <link rel="icon" href="./images/download.jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+    .nav-link:hover {
+        color: black;
+    }
+
+
+
+    .moving-text {
+        animation: moveText 3s ease infinite;
+    }
+
+    /* CSS for the banner */
+    .banner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .banner-text {
+        position: absolute;
+        bottom: 7px; /* Adjust as needed */
+        left: 10%;
+        font-size: 5em;
+        color: rgba(243, 243, 244, 0.955);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        z-index: 1; /* Ensure the text appears above the image */
+        transition: all 0.3s ease;
+    }
+
+    .slogan3 {
+        position: absolute;
+        bottom: 130px; /* Adjust as needed */
+        left: 11%;
+        font-size: 2em;
+        color: rgba(243, 243, 244, 0.955);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        z-index: 1; /* Ensure the text appears above the image */
+        transition: all 0.3s ease;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.8)); /* Add drop shadow */
+        transition: all 0.3s ease; /* Add transition effect */
+    }
+    
+    .banner:hover .banner-text,
+    .banner:hover .slogan3,
+    .banner:hover .banner-image {
+        transform: scale(1.1); /* Scale up on hover */
+    }
+
+    /* Form styling */
+    .form-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        display: none; /* Initially hidden */
+    }
+
+    .form-container.active {
+        display: block; /* Show when active */
+    }
+
+    .form-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-container input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form-container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .form-container button:hover {
+        background-color: #0056b3;
+    }
+    footer {
+        background-color: black;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start; /* Align items to the top */
+        flex-wrap: wrap; /* Allow content to wrap */
+    }
+
+    footer div {
+        text-align: middle; /* Align text to the left */
+        margin-top: 40px;
+        flex: 1; /* Equal distribution of space */
+    }
+
+    footer p {
+       margin: 6; /* Remove default margin */
+    }
+
+    /* Dropdown styles */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    } 
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropbtn {
+       background-color: white;
+       color: black;
+       border: none;
+       cursor: pointer;
+       padding: 10px 12px;
+       text-decoration: none;
+    }
+
+    .dropbtn:hover {
+       background-color: #f1f1f1;
+    }
+
+</style>
+</head>
+<body>
+        <!-- Register and Log In section -->
+        <div style="width: 100%; background-color: #f9f9f9; padding: 10px 0; display: flex; justify-content: space-between;">
+            <div style="margin-left: 20px;">
+                <a href="#register" style="text-decoration: none; color: #333; font-weight: bold;">Register</a>
+                <span style="margin: 0 10px;">|</span>
+                <a href="#login" style="text-decoration: none; color: #333; font-weight: bold;">Log In</a>
+            </div>
+            <div style="margin-right: 20px;">
+                <!-- Add your social media links here if needed -->
+            </div>
+        </div>
+    
+        <!-- Navigation bar -->
+        <div style="width: 100%; height: 15vh; display: flex;">
+            <!-- Logo -->
+            <div style="background-color: white; width: 12%; display: flex; justify-content: center; align-items: center;">
+                <img src="./images/logo.png" alt="logo" width="70%" height="100%">
+            </div>
+            <!-- Navigation links -->
+            <div style="background-color: white; width: 60%; display: flex; justify-content: space-around; align-items: center;">
+                <a href="./index.html" class="nav-link"><b>Home</b></a>
+                <a href="./about.html" class="nav-link"><b>About</b></a>
+                <a href="https://www.absacademy.com/faculties" class="nav-link"><b>Faculties</b></a>
+                <!-- Dropdown -->
+                <div class="dropdown">
+                    <a href="#Courses" style="color: rgb(34, 13, 102);"><button class="nav-link dropbtn"><b>Courses</b></a></button>
+                    <div class="dropdown-content">
+                        <a href="#department-management">Department of Management and Technology</a>
+                        <a href="#department-health">Department of Health Science</a>
+                        <a href="#department-polytechnic">Department of Polytechnic</a>
+                        <a href="#abs-nursing">ABS Academy of Nursing and Health Science</a>
+                        <a href="#abs-school">ABS Academy of School</a>
+                    </div>
+                </div>
+                <a href="#fees structure" class="nav-link"><b>Fees Structure</b></a>
+                <a href="https://www.absacademy.com/training-and-placement" class="nav-link"><b>Training and Placements</b></a>
+            </div>
+            <!-- Social media links -->
+            <div style="width: 28%; background-color: white; display: flex; align-items: center;">
+                <a href="https://www.facebook.com/profile.php?id=100057515106046" style="color: blue; text-decoration: none; margin-right: 30px;font-size:2em; margin-left: 100px;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color:  rgb(0, 191, 255); text-decoration: none; margin-right: 30px;font-size:2em;"><i class="fab fa-twitter"></i></a>
+                <a href="https://web.whatsapp.com/" style="color: green; text-decoration: none; margin-right: 30px;font-size:2em;"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.youtube.com/@absacademydept.ofbasicscie5974/featured" style="color: red; text-decoration: none; margin-right: 30px;font-size:2em; "><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/abs__academy/" style="color: rgb(226, 75, 100); text-decoration: none; margin-right: 30px;font-size:2em; "><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+            <div class="banner">
+                <h2 class="slogan3">Knowing us Better</h2>
+                <h1 class="banner-text">About Us ...</h1>
+                <img src="./images/1570090011phpEzxedw.jpeg" alt="About ABS Academy" style="width: 100%; height: 580px;">
+            </div>
+        </section>
+        
+        
+        <!-- About section -->
+        <section style="padding: 20px;">
+            <a href="#" style="color: black;"><h2 style="text-align: center; margin-bottom: 20px;">About ABS Academy</a></h2>
+            <p style="text-align: justify;">
+
+                ABS Academy of Science Technology and Management is one of the most reputed institutes in Eastern India and has been a pioneer in the field of professional courses. The institute was founded in 2007 and is run by Sarthak Educational Trust offering quality education and training in the field of business management, health sciences, computing applications, engineering, education. Equipped with state-of-the-art campus, laboratory, infrastructure along with computer aided learning mechanism, the institute aims at providing you the best as we believe that you deserve the best.
+
+            </p>
+            <!-- You can add more content about ABS Academy here -->
+            <a href="#" style="color: black;"><h2 style="text-align: center; margin-bottom: 20px;">Our mission</a></h2>
+            <p style="text-align: justify;">
+              <p>  1. We have to aspire the students to become the leader with managerial personalities in business sector with skill, education, training and research in our country.</p>
+
+<p>2. We take care to develop business leaders fostering partnership with national and international concerns.</p>
+
+<p>3. Pushing the frontiers of business knowledge, creating new opportunities, promoting academic growth and business sustainability.</p>
+
+<p>4. To educate the next generation of business leaders and pioneers that dream big, take risk, and shape the future of the ever changing business landscape. After all ABS Academy… is the “Dream Maker”</p>
+
+<p>5. To Connect with the Nation’s ongoing economic changes and promoting entrepreneurship and innovation.</p>
+
+<p>6. Finally today’s students will be the pillars to “ Make-in – India” I.e,” Atma Nirbhar Bharat”.</p>
+            </p>
+            <a href="#" style="color: black;"><h2 style="text-align: center; margin-bottom: 20px;">Our Objective</a></h2>
+            <p style="text-align: justify;">
+              <p> 1. To emerge as a center of excellence in the field of Management and Computer Education, Research & Consultancy in the future.</p>
+              <p> 2.To come up as one of the best B-school in India in the next five years.</p>
+              <p> 3.Imparting practical skill of Administration & Computer Applications to the students.</p>
+              <p> 4.Offering short term training courses for executive in near by industries.</p>
+              <p> 5.To integrate academic programmes, extra curricular activities, co-curricular activities and interpersonal relation to promote intellection growth for social & economic transformation.</p>
+              <p> 6.To take up consultancy work & live projects.</p>
+              <p> 7.Transparency in policy making, executing and monitoring of academic programmes.</p>
+              <p> 8.To develop and nurture entrepreneurial skill of the students and encourage entrepreneurship .To builds up healthy student-teacher relationship to foster the sense of belongingness in the process of overall development.</p>
+              <p> 9.Our emphasis will be on knowledge for utilization rather then the acquisition of knowledge for its own sake.</p>
+              <p> 10.To nurture the young talents by creating conclusive learning by creating conclusive learning environment facilitating the students to blossom into complete human being with enrichment in their physical, intellectual, emotional as well as spiritual frame of mind.</p>
+        </section>
+
+    <!-- Footer section -->
+    <footer style="background-color: grey; color: white; text-align: center; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <a href="#" style="color: white;"><p><b>Location and Contact</b></p></a>
+            <p>Jadabendra Panja Avenue, Sagarbhanga (Near Majer More)<br>
+                Durgapur, Paschim Bardhaman<br>
+                PO: Durgapur - 713211<br>
+                District: West Burdwan<br>
+                +91-94347-89210 / 201 / 202<br>
+                <a href="mailto:info@absacademy.com" style="color: white;">info@absacademy.com</a>
+            </p>
+        </div>
+        <div style="margin-top: auto;"> 
+            <p>&copy; 2024 ABS Academy. All Right Reserved.</p>
+        </div>
+        <div style="text-align: right;">
+            <a href="./index.html" class="nav-link" style="color: white;"><b>Home</b></a> |
+            <a href="https://www.absacademy.com/gallery" style="color: white;"><b>Gallery</b></a> |
+            <a href="./index.html" style="color: white;"><b>Terms of Service</b></a> |
+            <a href="./index.html" style="color: white;"><b>Privacy Policy</b></a>
+            <p style="margin-top: 100px; color: rgba(8, 3, 2, 0.996)"><b><i>Developed and created by SAIKAT BAIDYA</i></b></p> 
+        </div>
+    </footer>
+</body>
+
+</html>
